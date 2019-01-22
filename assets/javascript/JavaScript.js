@@ -8,12 +8,27 @@ function appendButtons() {
   for (i = 0; i < topics.length; i++) {
 
     var NewButton = $("<button>").attr("class", "btn btn-primary").html(topics[i]).val(topics[i]);
-    $("#button-div").append(NewButton);
+    $("#button-div").prepend(NewButton);
 
   }
 }
 
 appendButtons();
+
+//this function should get called when you submit the form
+function createNewButton(){
+  var newButton = $("#buttonInput", text);
+  topics.push(newButton);
+  $("#button-div").empty();
+  for (i = 0; i < topics.length; i++) {
+
+    var NewButton = $("<button>").attr("class", "btn btn-primary").html(topics[i]).val(topics[i]);
+    $("#button-div").prepend(NewButton);
+
+  }
+};
+
+
 
 function buildQueryURL() {
   // queryURL is the url we'll use to query the API
