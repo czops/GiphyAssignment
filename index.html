@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,34 +9,44 @@
 
     <!--Link to CSS Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  
+
     <!--Link to AJAX and JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-    
+
     <!--Link to you CSS Stylesheet-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
+
 <body>
-    
-<!-- As a link -->
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">GIPHY Request</a>
+
+    <!-- As a link -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">GIPHY Request</a>
 
 
-  </nav>
+    </nav>
 
-  <div id="container">
-      <div class="row">
-          <div class="col-md-8">
-            <button type="button" class="btn btn-primary">Primary</button>
-            
-            <!--Use JQuery to generate new buttons here if you want-->
-          </div>
-      </div>
-  </div>
-  
-<script src="assets/javascript/JavaScript.js"></script>
+    <div id="container">
+        <div class="row">
+            <div id="button-div" class="col-md-8">
+
+                <!--<button type="button" class="btn btn-primary">Primary</button>-->
+
+                <!--Use JQuery to generate new buttons here if you want-->
+
+            </div>
+            <div id="gif-div" class="col-md-8">
+
+                <!--Use JQuery to append GIFs here-->
+
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/javascript/JavaScript.js"></script>
 
 </body>
+
 </html>
