@@ -83,7 +83,7 @@ $(".btn-primary").on("click", function (event) {
   // Constructing a queryURL using the animal name
   //here i plugged in my API key from Giphy
   var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-    gif + "&api_key=" + queryParams.apikey + "&limit=10";
+    gif + "&api_key=" + queryParams.apikey + "&limit=5";
 
   // Performing an AJAX request with the queryURL
   $.ajax({
@@ -111,8 +111,10 @@ $(".btn-primary").on("click", function (event) {
         var animalImage = $("<img>");
         animalImage.attr("class", "NewGif")
 
+        var LoadPaused = results[i].images.fixed_height.url;
+        LoadPaused = LoadPaused.replace('/200.gif','/200_s.gif');
         // Setting the src attribute of the image to a property pulled off the result item
-        animalImage.attr("src", results[i].images.fixed_height.url);
+        animalImage.attr("src", LoadPaused);
 
         // Appending the paragraph and image tag to the animalDiv
         gifDiv.append(p);
@@ -125,18 +127,18 @@ $(".btn-primary").on("click", function (event) {
 });
 
 
-//trying to get the gifs to load paused
-$(".gif").on("click", function() {
-  // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-  var state = $(this).attr("data-state");
-  // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-  // Then, set the image's data-state to animate
-  // Else set src to the data-still value
-  if (state === "still") {
-    $(this).attr("src", $(this).attr("data-animate"));
-    $(this).attr("data-state", "animate");
-  } else {
-    $(this).attr("src", $(this).attr("data-still"));
-    $(this).attr("data-state", "still");
-  }
+$(document).on("click", ".NewGif", function AnimateGifs() {
+  console.log("why the hell isn't this working?")
+  debugger;
+  var UnPause = $(this).attr("src");
+  UnPause = UnPause.replace('/200_s.gif','/200.gif');
+  
+  $(this).attr("src", UnPause);
 });
+
+
+//trying to get the gifs to switch from paused to unpaused
+// function AnimateGifs() {
+  
+  
+// };
