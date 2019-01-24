@@ -126,18 +126,21 @@ $(".btn-primary").on("click", function (event) {
     });
 });
 
-
+//trying to get the gifs to switch from paused to unpaused
 $(document).on("click", ".NewGif", function AnimateGifs() {
-  console.log("why the hell isn't this working?")
+  // console.log("why the hell isn't this working?")
   debugger;
   var UnPause = $(this).attr("src");
-  UnPause = UnPause.replace('/200_s.gif','/200.gif');
-  
+  if (UnPause.includes('/200_s.gif')){
+    UnPause = UnPause.replace('/200_s.gif','/200.gif');
+  } else{
+    UnPause = UnPause.replace('/200.gif','/200_s.gif');
+  }
   $(this).attr("src", UnPause);
 });
 
 
-//trying to get the gifs to switch from paused to unpaused
+
 // function AnimateGifs() {
   
   
